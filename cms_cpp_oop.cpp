@@ -11,9 +11,17 @@ int main() {
     vector<string> participants;
     vector<string> remainingParticipants;
 
+    // Get number of participants
+    int numParticipants;
+    cout << "Enter number of participants: ";
+    if (!(cin >> numParticipants) || numParticipants < 2 || numParticipants > 100) {
+        cout << "Invalid input. Please enter a number between 2 and 100.\n";
+        return 1;
+    }
+
     // Get participant names
-    cout << "Enter 4 participant names:\n";
-    for (int i = 0; i < 4; i++) {
+    cout << "Enter " << numParticipants << " participant names:\n";
+    for (int i = 0; i < numParticipants; i++) {
         string name;
         cout << "Participant " << i + 1 << ": ";
         cin >> name;
